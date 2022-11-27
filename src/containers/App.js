@@ -8,12 +8,14 @@ const apiKey = "790b5604ef818b079894ab54b40fb69e";
 
 function App() {
   const [cities, setCities] = useState([]);
+
   function onClose(id) {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
+
   function onSearch(ciudad) {
     //Llamado a la API del clima
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
@@ -36,14 +38,14 @@ function App() {
         }
       });
   }
-  function onFilter(ciudadId) {
-    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
-    if(ciudad.length > 0) {
-        return ciudad[0];
-    } else {
-        return null;
-    }
-  }
+  // function onFilter(ciudadId) {
+  //   let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
+  //   if(ciudad.length > 0) {
+  //       return ciudad[0];
+  //   } else {
+  //       return null;
+  //   }
+  // }
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
