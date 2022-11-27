@@ -4,3 +4,6 @@ Trabajo realizado en clase (Bootcamp SoyHenry mar-2022) para experimentar la con
 
 Cada componente React en esta aplicacion tiene su propia hoja de estilos .css de igual nombre, la cual es importada desde el componente, y asignada cada clase de estilos a cada elemento que compone el jsx del componente.
 
+ver aplicación deployada en: https://weather-app-fuhrn.vercel.app/
+
+![Alt text](src/img/landingWeatherApp.png)
